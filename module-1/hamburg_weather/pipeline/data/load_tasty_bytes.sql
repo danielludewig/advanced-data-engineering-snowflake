@@ -116,6 +116,7 @@ CREATE OR ALTER TABLE {{env}}_tasty_bytes.raw_pos.menu
 CREATE OR ALTER TABLE {{env}}_tasty_bytes.raw_pos.truck
 (
    truck_id NUMBER(38,0),
+
    menu_type_id NUMBER(38,0),
    primary_city VARCHAR(16777216),
    region VARCHAR(16777216),
@@ -307,7 +308,7 @@ COPY INTO {{env}}_tasty_bytes.raw_pos.country
 FROM @{{env}}_tasty_bytes.public.s3load/raw_pos/country/;
 
 
-franchise table load
+-- franchise table load
 COPY INTO {{env}}_tasty_bytes.raw_pos.franchise
 FROM @{{env}}_tasty_bytes.public.s3load/raw_pos/franchise/;
 
